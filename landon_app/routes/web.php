@@ -29,3 +29,5 @@ Route::get('/home', function () {
     $data['version'] = '0.1.1';
     return view('welcome', $data);
 });
+
+Route::get('/di', 'ClientController@di');
