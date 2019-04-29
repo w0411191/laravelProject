@@ -31,3 +31,17 @@ Route::get('/home', function () {
 });
 
 Route::get('/di', 'ClientController@di');
+
+Route::get('/facades/db', function () {
+    return DB::select('SELECT * from table');
+});
+
+Route::get('/facades/encrypt', function () {
+    return Crypt::encrypt('123456789');
+});
+
+//eyJpdiI6IjZJMnJSbG5Ocmt1UWN5Y1QyaWFOdmc9PSIsInZhbHVlIjoiRmRJaFc0QWlScWZOc1A1UVwvU2RES0NxdTI1OTViZDJyRndwTHpGb0pJRFU9IiwibWFjIjoiYTc1MzA1MjVmOGE0NDAxNGUzOThiY2E1NzViNDQ5ZWEyNWI3M2Q2N2RhMjZmYTAyMTljMTZhZjFjMjhmYzYyNCJ9
+
+Route::get('/facades/decrypt', function () {
+    return Crypt::decrypt('eyJpdiI6IjZJMnJSbG5Ocmt1UWN5Y1QyaWFOdmc9PSIsInZhbHVlIjoiRmRJaFc0QWlScWZOc1A1UVwvU2RES0NxdTI1OTViZDJyRndwTHpGb0pJRFU9IiwibWFjIjoiYTc1MzA1MjVmOGE0NDAxNGUzOThiY2E1NzViNDQ5ZWEyNWI3M2Q2N2RhMjZmYTAyMTljMTZhZjFjMjhmYzYyNCJ9');
+});
