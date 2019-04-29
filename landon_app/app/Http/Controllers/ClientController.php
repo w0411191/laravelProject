@@ -32,4 +32,9 @@ class ClientController extends Controller
     {
         return __METHOD__;
     }
+
+    public function show($client_id)
+    {
+        return __METHOD__ . ':' . $client_id;
+    }
 }
